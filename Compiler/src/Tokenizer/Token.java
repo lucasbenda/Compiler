@@ -10,7 +10,8 @@ public class Token {
     protected String token;
     protected int lineNum;
     protected int colNum;
-
+    private TokenType type;
+    
     public Token(String in_lex, String in_token, int lnum, int colnum) {
         lexeme = in_lex;
         token = in_token;
@@ -24,7 +25,11 @@ public class Token {
         lineNum = 0;
         colNum = 0;
     }
-
+    
+    public TokenType getType(){
+        return TokenType.valueOf(lexeme);
+    }
+    
     public String getLexeme() {
         return lexeme;
     }

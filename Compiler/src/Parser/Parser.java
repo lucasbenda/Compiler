@@ -43,8 +43,8 @@ public class Parser {
         //this.scanner = scanner;
         symboltables = new Stack<SymbolTable>();
 
-        lookAhead = scanner.getToken();
-        lookAhead2 = scanner.getToken();
+        lookAhead = list.getFirst();
+        lookAhead2 = list.getFirst();
         try {
             out = new PrintWriter(new FileWriter("parse-tree"));
         } catch (IOException e) {
@@ -59,8 +59,9 @@ public class Parser {
     }
 
     private void getToken() {
+        ListIndex++;
         lookAhead = lookAhead2;
-        lookAhead2 = scanner.getToken();
+        lookAhead2 = list.get(ListIndex);
     }
 
     public void match(TokenType tokenInput) {
