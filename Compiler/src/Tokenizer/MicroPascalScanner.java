@@ -37,14 +37,14 @@ public class MicroPascalScanner implements I_Tokenizer {
 
         tokenList.remove(tokenList.size() - 1);
         tokenList.add(new Token("EOF", "MP_EOF", lineNum, colNum));
-        
         return tokenList;
     }
 
     private void scanAllTokens() {
         while (hasNextToken()) {
-            Token current = getToken();
-            tokenList.add(current);
+            getToken();
+			//System.out.println("Token>>  "+"Ln:   "+current.getLineNumber()+"\tCl: "+current.getColumnNumber()+"\t\tType:  "+current.getToken()+"\t\tLex:  "+current.getLexeme());
+            //tokenList.add(current);
         }
     }
 

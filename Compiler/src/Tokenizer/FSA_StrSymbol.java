@@ -140,10 +140,9 @@ public class FSA_StrSymbol extends Tokenizer {
             default:
                 if (nextChar != '\n') {
                     System.out.println("StrSymFSA asked to scan for item that was not string or symbol:\t" + nextChar + " == " + (int) nextChar);
+                    foundToken = true;
+                    retTok = new Token("", "MP_ERROR", line, col);
                 }
-
-                foundToken = true;
-                retTok = new Token("", "MP_ERROR", line, col);
         }//end switch
         return retTok;
     }

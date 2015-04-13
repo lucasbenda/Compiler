@@ -39,10 +39,10 @@ public class Parser {
 
     public Parser(LinkedList<Token> inList) throws IOException {
         list = inList;
-        
+
         //this.scanner = scanner;
         symboltables = new Stack<SymbolTable>();
-        
+
         lookAhead = scanner.getToken();
         lookAhead2 = scanner.getToken();
         try {
